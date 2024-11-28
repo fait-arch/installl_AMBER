@@ -163,3 +163,18 @@ Este diagrama describe los pasos para la configuración del entorno y la instala
             U --> V[Fin del Script]
         end
 ```
+
+source leaprc.protein.ff19SB
+source leaprc.gaff
+
+receptor = loadpdb receptor.pdb
+ligando = loadmol2 ligando.mol2
+loadamberparams ligando.frcmod
+
+complex = combine {receptor ligando}
+solvatebox complex TIP3PBOX 12.0
+addions complex Na+ 0
+addions complex Cl- 0
+
+saveamberparm complex complex.prmtop complex.inpcrd
+quit
