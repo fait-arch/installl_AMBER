@@ -85,7 +85,7 @@ Este documento describe el proceso para configurar el entorno de AMBER utilizand
 
 3. **Extraer los archivos descargados**  
    ```bash
-   tar xvfj ambertools24.tar.bz2 || { echo "Error al extraer AmberTools24"; exit 1; }
+   tar xvfj ambertools24.tar.bz2 || { echo "Error al extraer AmberTools24"}
    tar xvfj amber24.tar.bz2 || { echo "Error al extraer Amber24";}
    ```
 
