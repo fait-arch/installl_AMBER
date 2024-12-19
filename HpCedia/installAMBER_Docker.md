@@ -65,7 +65,8 @@ Este documento describe el proceso para configurar el entorno de AMBER utilizand
    bash /tmp/Miniconda3-latest-Linux-x86_64.sh -b -p "$HOME/miniconda" || { echo "Error al instalar Miniconda";}
    ```
 
-3. **Configurar el PATH para incluir Miniconda**  
+3. **Configurar el PATH para incluir Miniconda**
+   Agregar al "nano ~/.bashrc" esta direccion:  
    ```bash
    export PATH="$HOME/miniconda/bin:$PATH"
    ```
@@ -74,43 +75,49 @@ Este documento describe el proceso para configurar el entorno de AMBER utilizand
 
 1. **Cambiar al directorio temporal**  
    ```bash
-   cd /tmp || { echo "Error al acceder al directorio /tmp";}
+   cd /tmp || echo "Error al acceder al rectorio /tmp"
    ```
 
 2. **Descargar AmberTools y Amber**  
    ```bash
-   curl -X POST -d "Name=Juan Moromenacho" -d "Institution=UIDE" -o ambertools24.tar.gz https://ambermd.org/cgi-bin/AmberTools24-get.pl || { echo "Error al descargar AmberTools24";}
-   curl -X POST -d "Name=Juan Moromenacho" -d "Institution=UIDE" -o amber24.tar.gz https://ambermd.org/cgi-bin/Amber24free-get.pl || { echo "Error al descargar Amber24";}
+   curl -X POST -d "Name=Juan Moromenacho" -d "Institution=UIDE" -o ambertools24.tar.gz https://ambermd.org/cgi-bin/AmberTools24-get.pl || echo "Error al descargar AmberTools24"
+   curl -X POST -d "Name=Juan Moromenacho" -d "Institution=UIDE" -o amber24.tar.gz https://ambermd.org/cgi-bin/Amber24free-get.pl || echo "Error al descargar Amber24"
    ```
 
 3. **Extraer los archivos descargados**  
    ```bash
-   tar xvfj ambertools24.tar.bz2 || { echo "Error al extraer AmberTools24"}
-   tar xvfj amber24.tar.bz2 || { echo "Error al extraer Amber24";}
+   tar xvfj ambertools24.tar.bz2 || echo "Error al extraer AmberTools24"
+   tar xvfj amber24.tar.bz2 || echo "Error al extraer Amber24"
    ```
 
 ### 5. Compilación de Amber
 
 1. **Acceder al directorio de construcción**  
    ```bash
-   cd amber24_src/build || { echo "Error al acceder al directorio de construcción";}
+   cd amber24_src/build || echo "Error al acceder al directorio de construcción"
    ```
 
 2. **Ejecutar el script de configuración**  
    ```bash
-   ./run_cmake || { echo "Error al ejecutar run_cmake";}
+   ./run_cmake || echo "Error al ejecutar run_cmake"
    ```
 
 3. **Compilar e instalar**  
    ```bash
-   make install || { echo "Error al ejecutar make install";}
+   make install || echo "Error al ejecutar make install"
    ```
+
+4. **Mover archivo "amber24"**
+   ```bash
+   sudo mv ./amber24 /
+   ```
+
 
 ### 6. Configuración Final
 
 1. **Configurar el entorno de AMBER**  
    ```bash
-   source "$HOME/<User>/amber24/amber.sh" || { echo "Error al configurar el entorno AMBER";}
+   export PATH="$HOME/amber24/amber.sh"
    ```
 
 ## Notas
