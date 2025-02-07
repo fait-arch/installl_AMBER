@@ -32,7 +32,7 @@ receptor = loadPdb receptor_clean.pdb
 ligando = loadmol2 ligando.mol2
 loadamberparams ligando.frcmod
 
-complex = combine {receptor ligand}
+complex = combine {receptor ligando}
 savepdb complex complex.pdb
 
 quit

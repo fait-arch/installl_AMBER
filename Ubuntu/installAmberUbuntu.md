@@ -25,6 +25,7 @@ sudo apt -y install tcsh make gcc gfortran flex bison patch bc wget xorg-dev lib
 3. *Instalar Python 3*  
 ```bash
 sudo apt install -y python3 || echo "Error al instalar Python3"
+sudo apt update && sudo apt install -y cmake g++ gcc make build-essential || echo "Instalar dependecias del instalador de c++"
 ```
 
 4. *Verificación*
@@ -62,6 +63,8 @@ $HOME/miniconda/bin/conda --version && echo $PATH | grep "$HOME/miniconda"
 
 5. *Activar Conda*
 ```bash
+. /home/fait-arch/miniconda/etc/profile.d/conda.sh
+conda init bash
 conda activate
 ```
 6. *Crear Entorno de Conda para Amber*
@@ -134,10 +137,9 @@ Cambia el usurio fait-arch por el nombre de tu usurio
 ## Notas
 
 - Asegúrate de reemplazar <User> con tu nombre de usuario en el sistema.
-```mermaid
 
-```
-###   Referencias
-> [!Generic_installation_instructions]
-> [Installing Amber on Ubuntu](https://ambermd.org/InstUbuntu.php)
-> 
+
+## Referencias
+
+- [Amber Installation Guide](https://ambermd.org/Installation.php)
+- [Amber 24 Documentation](https://ambermd.org/doc12/Amber24.pdf)

@@ -3,7 +3,7 @@
 
 ```bash
 tleap
-source leaprc.protein.ff14SB
+source leaprc.protein.ff19SB
 source leaprc.gaff
 source leaprc.water.tip3p 
 
@@ -14,8 +14,8 @@ complex = loadpdb "complex.pdb"
 
 
 solvatebox complex TIP3PBOX 12.0 
-addions complex Na+ 0
-addions complex Cl- 0
+addions complex Na+ 
+addions complex Cl- 6
 
 saveamberparm complex complex.prmtop complex.inpcrd
 savepdb complex complex_solvated.pdb
