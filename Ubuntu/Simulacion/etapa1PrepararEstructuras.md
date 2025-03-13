@@ -10,7 +10,7 @@
 ### Receptor
 Añadimos la adición de hidrógenos  la corrección de la estructura para que sea compatible con AMBER.
 ```bash
-pdb4amber -i receptor.pdb -o receptor_clean.pdb --reduce 
+pdb4amber -i receptor.pdb -o receptor_amber.pdb 
 ```
 
 ### Ligando
@@ -26,6 +26,8 @@ parmchk2 -i ligando.mol2 -f mol2 -o ligando.frcmod
 
 ### Complejo
 Ahora con los archivos preparados tanto para el receptor como para el ligando, hay que crear el complejo ligando-receptor en Amber.
+
+Crear el archivo **complejo_tleap.in** o el visor 
 ```bash
 tleap
 receptor = loadPdb receptor_clean.pdb
@@ -36,4 +38,9 @@ complex = combine {receptor ligando}
 savepdb complex complex.pdb
 
 quit
+```
+
+Ejecutar:
+```bash
+tleap -f solvatar_tleap.in
 ```
