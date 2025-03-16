@@ -10,8 +10,8 @@ El objetivo es documentar el proceso de instalación, ejecución y simulación d
 
 
 ###   Referencias
-> [!Generic_installation_instructions]
 > [Installing Amber on Ubuntu](https://ambermd.org/InstUbuntu.php)
+> [Installing dependencies Amber on Ubuntu](https://ambermd.org/InstUbuntu.php)
+> [Simple Simulation of Alanine Dipeptide](https://ambermd.org/tutorials/basic/tutorial0/index.php)
+> [Installing dependencies Amber on Ubuntu](https://ambermd.org/InstUbuntu.php)
 
-> [!Ejemplo_de_ejecucion]
-> [](https://ambermd.org/InstUbuntu.php)
