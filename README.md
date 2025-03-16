@@ -8,10 +8,9 @@ El objetivo es documentar el proceso de instalación, ejecución y simulación d
 -   Comprobación
 -   Simulación
 
+### Referencias
 
-###   Referencias
-> [Installing Amber on Ubuntu](https://ambermd.org/InstUbuntu.php)
-> [Installing dependencies Amber on Ubuntu](https://ambermd.org/InstUbuntu.php)
-> [Simple Simulation of Alanine Dipeptide](https://ambermd.org/tutorials/basic/tutorial0/index.php)
-> [Installing dependencies Amber on Ubuntu](https://ambermd.org/InstUbuntu.php)
-
+- [Amber Installation Guide](https://ambermd.org/Installation.php)
+- [Amber 24 Documentation](https://ambermd.org/doc12/Amber24.pdf)
+- [Installing Amber on Ubuntu](https://ambermd.org/InstUbuntu.php)
+- [Installing dependencies Amber on Ubuntu](https://ambermd.org/InstUbuntu.php)

@@ -144,3 +144,6 @@ EOF
 ```bash
 pmemd.cuda -O -i prod.in -o prod.out -p complex.prmtop -c equil.rst -r prod.rst -x prod.nc
 ```
+## Referencias
+- [Gaussian field-based 3D-QSAR and molecular simulation studies to design potent pyrimidine–sulfonamide hybrids as selective BRAFV600E inhibitors](https://pubs.rsc.org/en/content/articlepdf/2022/ra/d2ra05751d)
+

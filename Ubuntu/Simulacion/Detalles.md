@@ -1,6 +1,12 @@
 # Preparacion de Dinámica
 
-##  Preparación:
+
+##  Diagrama de flujo
+
+##  Descripccion de pasos 
+
+
+##  Preparación De automatizacion:
 - Crea una carpeta llamada ligandos y coloca todos tus archivos PDB de ligandos ahí
 - Coloca tu archivo receptor.pdb en la carpeta principal
 - Guarda el script anterior como ejecutar_simulaciones.sh
@@ -191,3 +197,9 @@ done
 
 echo "¡Todas las simulaciones han sido completadas!"
 ```
+
+
+## Referencias
+- [Simple Simulation of Alanine Dipeptide](https://ambermd.org/tutorials/basic/tutorial0/index.php)
+- [Gaussian field-based 3D-QSAR and molecular simulation studies to design potent pyrimidine–sulfonamide hybrids as selective BRAFV600E inhibitors](https://pubs.rsc.org/en/content/articlepdf/2022/ra/d2ra05751d)
+
