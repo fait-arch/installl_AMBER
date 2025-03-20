@@ -4,7 +4,7 @@ sander es un programa que forma parte de AmberTools y se usa para dos cosas prin
 - *Minimización de energía:* Relaja la estructura molecular para encontrar la configuración de energía más baja.
 - *Calentamiento:* Aumenta gradualmente la temperatura del sistema hasta alcanzar la temperatura objetivo.
 - *Equilibración:* Estabiliza el sistema a la temperatura y presión deseadas, preparándolo para la simulación de producción.
-- *Dinámica molecular (MD):* Simula el movimiento de los átomos en el tiempo, permitiendo estudiar el comportamiento de la molécula en condiciones realistas.
+- *Producción (MD):* Simula el movimiento de los átomos en el tiempo, permitiendo estudiar el comportamiento de la molécula en condiciones realistas.
 
 
 ## Archivos de entrada y salida
@@ -73,6 +73,10 @@ Minimización del sistema
 /
 EOF
 ```
+### Ejecución del comando:
+```bash
+sander -O -i min.in -o min.out -p complex.prmtop -c complex.inpcrd -r min.rst -ref complex.inpcrd
+```
 ##  Calentamiento
 Después de la minimización, el sistema debe calentarse gradualmente desde 0 K hasta la temperatura deseada (por ejemplo, 310 K). Crea un archivo de entrada llamado heat.in:
 ```bash
@@ -103,7 +107,7 @@ cat > equil.in <<EOF
 Equilibración a 310 K y 1 atm
 &cntrl
   imin=0, irest=1, ntx=5,
-  nstlim=250000, dt=0.002,
+  nstlim=250000, dt=0.002, // 
   temp0=310.0,
   ntb=2, pres0=1.0, taup=2.0,
   ntp=1,
@@ -120,14 +124,14 @@ EOF
 sander -O -i equil.in -o equil.out -p complex.prmtop -c heat.rst -r equil.rst -x equil.nc -ref heat.rst
 ```
 
-##  Dinámica molecular (MD)
+##  Producción (MD)
 Crea un archivo llamado md.in con el siguiente contenido, se realiza una simulación de 1 ns (500,000 pasos de integración con 2 fs por paso).
 ```bash
 cat > md.in <<EOF
 Producción de la dinámica molecular
 &cntrl
   imin=0, irest=1, ntx=5,
-  nstlim=500000000, dt=0.002,
+  nstlim=500000000, dt=0.002, // 500.000
   temp0=310.0,
   ntb=2, pres0=1.0, taup=2.0,
   ntp=1,
@@ -142,6 +146,8 @@ EOF
 ```
 ### Ejecución del comando:
 ```bash
+
+sander -O -i prod.in -o prod.out -p complex.prmtop -c equil.rst -r prod.rst -x prod.nc
 pmemd.cuda -O -i prod.in -o prod.out -p complex.prmtop -c equil.rst -r prod.rst -x prod.nc
 ```
 ## Referencias
