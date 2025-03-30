@@ -7,7 +7,7 @@ source leaprc.protein.ff19SB
 source leaprc.gaff
 source leaprc.water.tip3p 
 
-receptor = loadPdb receptor_clean.pdb
+receptor = loadPdb receptor_amber.pdb
 ligando = loadmol2 ligando.mol2
 loadamberparams ligando.frcmod
 complex = loadpdb "complex.pdb"
