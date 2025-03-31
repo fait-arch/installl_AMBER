@@ -29,8 +29,9 @@ Ahora con los archivos preparados tanto para el receptor como para el ligando, h
 
 Crear el archivo **complejo_tleap.in** o el visor 
 ```bash
+cat > complejo_tleap.in <<EOF
 tleap
-receptor = loadPdb receptor_clean.pdb
+receptor = loadPdb receptor_amber.pdb
 ligando = loadmol2 ligando.mol2
 loadamberparams ligando.frcmod
 
@@ -38,6 +39,7 @@ complex = combine {receptor ligando}
 savepdb complex complex.pdb
 
 quit
+EOF
 ```
 
 Ejecutar:

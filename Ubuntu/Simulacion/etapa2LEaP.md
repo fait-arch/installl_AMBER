@@ -1,7 +1,8 @@
 # Etapa 2 Solvantar Complejo
 Crear el archivo **solvatacion.in** o el visor 
 
-```bash
+```bash 
+cat > solvatacion.in <<EOF
 tleap
 source leaprc.protein.ff19SB
 source leaprc.gaff
@@ -20,5 +21,11 @@ addionsrand COM Na+ 0 Cl- 0.15
 saveamberparm complex complex.prmtop complex.inpcrd
 savepdb complex complex_solvated.pdb
 
-quit
+quit 
+EOF
+```
+
+Ejecutar:
+```bash
+tleap -f solvatacion.in
 ```
