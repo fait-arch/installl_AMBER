@@ -5,7 +5,7 @@
 # and running molecular dynamics simulations using AMBER tools
 
 # Check if input files exist
-if [ ! -f receptor.pdb ] || [ ! -f ligand.pdb ]; then
+if [ ! -f ./Data/receptor.pdb ] || [ ! -f ./Data/ligand.pdb ]; then
   echo "Error: receptor.pdb or ligand.pdb not found!"
   echo "Please make sure these files are in the current directory."
   exit 1
