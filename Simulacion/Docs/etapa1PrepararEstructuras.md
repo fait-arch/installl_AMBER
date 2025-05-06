@@ -20,11 +20,6 @@ Pasamos al ligando a un archivo .mol2 ya que ste formato es más adecuado para d
 antechamber -i ligand.pdb -fi pdb -o ligando.mol2 -fo mol2 -c bcc -s 2
 parmchk2 -i ligando.mol2 -f mol2 -o ligando.frcmod
 ```
-
-```bash
-parmchk2 -i ligando.mol2 -f mol2 -o ligando.frcmod
-```
-
 ### Complejo
 Ahora con los archivos preparados tanto para el receptor como para el ligando, hay que crear el complejo ligando-receptor en Amber.
 

@@ -8,7 +8,7 @@ El objetivo es documentar el proceso de instalación, ejecución y simulación d
 -   Comprobación
 -   Simulación
 
-##  Simulacion
+##  Arbol de Archivos
 
 
 ## Referencias
