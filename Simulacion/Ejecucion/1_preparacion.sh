@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # 1_preparacion.sh - Script para automatizar la preparación de estructuras para simulación molecular
-# Autor: Claude
-# Fecha: 23/04/2025
-# Uso: ./1_preparacion.sh
+
 
 # Función para registrar el tiempo y uso de recursos
 log_performance() {
